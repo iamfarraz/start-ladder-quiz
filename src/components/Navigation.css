@@ -11,7 +11,7 @@ body{
 .list {
     list-style: none;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     width:50%; 
 }
 #brand img{
@@ -60,7 +60,8 @@ header{
     .list{
         position: absolute; 
         height: 100vh;
-        top:8vh;
+        top:10vh;
+        left:20vw;
         display:flex;
         flex-direction: column;
         align-items:center;
@@ -80,6 +81,10 @@ header{
 .list-active{
     transform: translateY(10%);
     
+    
+}
+.App .list-active{
+    background-color: white;
 }
 
 .line1-cross{
@@ -92,5 +97,6 @@ header{
 .line3-cross{
   transform: rotate(45deg) translate(-5px,-6px);
 }
+
 
 
