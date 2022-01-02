@@ -1,32 +1,45 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
-*{
+/* *{
     margin:10px;
+} */
+
+body{
+    margin:0;
+    padding: 0;
+    
 }
 .list {
     list-style: none;
     display: flex;
     justify-content: space-around;
     width:50%; 
-
 }
 #brand img{
     max-height: 10vh;
+    filter: brightness(90%);
 }
 
 .list li a{
     color: #6776FF;
     text-decoration: none;
-    letter-spacing: 1px;
+ 
    font-family: Poppins;
    font-size: 16px;
-line-height: 24px;
+   line-height: 24px;
+   filter: brightness(100%);
 }
 .nav{
    display:flex;
-    justify-content:space-around;
+    justify-content:space-between;
     align-items: center;
-
+    
 }
+header{
+ margin-top: 5vh;  
+ margin-left: 8vw;
+ margin-right: 8vw; 
+}
+
 .burger{
     display: none ;
     cursor:pointer;
@@ -40,7 +53,7 @@ line-height: 24px;
     transition: 0.2s ease-in;
 }
 
-@media screen and (max-width:800px) {
+@media screen and (max-width:950px) {
     body{
        overflow-y: hidden; /*to hide slide bar*/
     }

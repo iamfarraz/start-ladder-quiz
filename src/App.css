@@ -1,3 +1,31 @@
-.app{
-  margin: 1rem;
+body{
+    margin: 0;
 }
+
+
+.rectangle{
+   background-color:  rgba(128, 255, 219, 0.2);
+   width:100vw;
+   height: 60vh;
+   clip-path: polygon(0 1%, 100% 0%, 100% 87%, 0% 100%);
+  position:absolute;
+  top:0; left:0; right:0;
+  z-index: -100; /*to make it background*/
+}
+.dots-verticle img{
+    position: absolute;
+    top:18vh;
+    left:70vw;
+    z-index: -100;
+    width: 15vw;
+    height: 70vh;
+}
+.dots-horizontal img{
+    position: absolute;
+    z-index: -100;
+    left :8vw;
+    top:50vh;
+    height: 17vh;
+    width: 25vw;
+}
+
