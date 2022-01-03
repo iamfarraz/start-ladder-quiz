@@ -1,8 +1,13 @@
 import './Game.css'
+import Start from "./Start"
 function Game() {
+  //start
+  //questions
+  //end
   return (
     <div className="Game">
-        <div className='game-rectangle'></div>
+      <Start/>  
+        
     </div>
   );
 }

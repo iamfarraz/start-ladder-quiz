@@ -1,4 +1,4 @@
-// import './quiz.css';
+import './Quiz.css';
 import Navigation from "./components/Navigation"
 import Game from "./components/Game";
 function Quiz() {
