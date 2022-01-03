@@ -4,13 +4,14 @@
     margin: 0;
     position: absolute;
     top:0;
+    
 }
 
 .rectangle{
    background-color:  rgba(128, 255, 219, 0.2);
    width:100vw;
    height: 60vh;
-   clip-path: polygon(0 1%, 100% 0%, 100% 87%, 0% 100%);
+   clip-path: polygon(0 0, 100% 0%, 100% 87%, 0% 100%);
   position:absolute;
   top:0; left:0; right:0;
   z-index: -100; /*to make it background*/
@@ -30,5 +31,17 @@
     top:50vh;
     height: 17vh;
     width: 25vw;
+}
+
+@media screen and (max-width:950px) {
+  .dots-verticle img{
+      display: none;
+    }
+    .dots-horizontal img{
+        display: none;
+    }  
+    .rectangle{
+        height: 95vh;
+    } 
 }
 

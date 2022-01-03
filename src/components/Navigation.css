@@ -1,13 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
-/* *{
-    margin:10px;
-} */
 
-body{
-    margin:0;
-    padding: 0;
-    
-}
+
 .list {
     list-style: none;
     display: flex;
@@ -32,12 +25,10 @@ body{
    display:flex;
     justify-content:space-between;
     align-items: center;
-    
-}
-header{
- margin-top: 5vh;  
+  margin-top: 5vh;  
  margin-left: 8vw;
- margin-right: 8vw; 
+ margin-right: 8vw;
+    
 }
 
 .burger{
@@ -55,19 +46,24 @@ header{
 
 @media screen and (max-width:950px) {
     body{
-       overflow-y: hidden; /*to hide slide bar*/
+       overflow-y: hidden; /*to hide slide bar*/   
+       overflow-x: hidden;
     }
     .list{
         position: absolute; 
-        height: 100vh;
+        /* height: 100vh; */
         top:10vh;
-        left:20vw;
+        z-index: 100;
+        /* left:20vw; */
         display:flex;
         flex-direction: column;
         align-items:center;
        justify-content: flex-start;
         transform: translatey(-110%);
         transition: 0.5s ease-in;
+        width:100%;
+        height: 100%;
+        left:0;   
     }
     .list li a{
     font-size: 24px;
@@ -76,27 +72,30 @@ header{
     .burger{
         display: block;
     }
-   
-}
-.list-active{
-    transform: translateY(10%);
-    
-    
-}
-.App .list-active{
-    background-color: white;
-}
+    .cross{
+    transform: translate(-5%,10%);  
+    background-color: white; 
+    position: absolute;
+    background-size: 100vh;
+    }
 
 .line1-cross{
   transform: rotate(-45deg) translate(-5px,6px);
-  
-}
+  }
 .line2-cross{ 
-    opacity :0;
-}
+    opacity :0;}
 .line3-cross{
   transform: rotate(45deg) translate(-5px,-6px);
 }
+
+
+
+
+
+}
+
+
+
 
 
 

@@ -7,3 +7,12 @@
   left:25%;
   
 }
+
+@media screen and (max-width:950px) {
+  .Game{
+    height:50%;
+    width:80%;
+    left:10%;
+    top:25%;
+  }
+}

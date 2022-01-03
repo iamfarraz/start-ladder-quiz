@@ -3,16 +3,15 @@ import logo from "../assets/logo.png"
 import {useState} from 'react'
 
 function Navigation() {
-   const [nav,setnav]=useState('');
    const [burger,setburger]=useState('');
   return (
   <header className="container">
        
-   <nav className="nav">
+   <nav className={`nav`}>
        <div id="brand">
            <img src={logo} alt="logo"/>
        </div>
-     <ul className={`list ${nav}`}>
+     <ul className={`list ${burger}`}>
       <li><a href="#">Programs</a></li>
       <li><a href="#">Live Projects</a></li>
       <li><a href="#">Community</a></li>
@@ -21,9 +20,6 @@ function Navigation() {
      </ul>
      <div className="burger" 
         onClick={()=>{
-            //showing the navbar content
-           if(nav==='') setnav('list-active')
-           else setnav('')
 
            // Animating Burger
            if(burger==='') setburger('cross')
