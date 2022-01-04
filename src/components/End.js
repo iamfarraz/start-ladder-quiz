@@ -1,5 +1,5 @@
 import './End.css'
-
+import {NavLink} from 'react-router-dom'
 function End() {
   
   return (
@@ -8,7 +8,9 @@ function End() {
        <div className='accuracy'>Accuracy</div>
         <div className='val_avg'>4.3s</div>
        <div className='avg'>Avg Speed</div>
-       <button className='play-again-button'>Play Again</button> 
+       <NavLink className='play-again-button' to="/">
+        <div className='text'> Play Again</div>
+         </NavLink> 
         
     </div>
   );

@@ -10,6 +10,7 @@
   display: grid;
   grid-template-columns: repeat(31,1fr);
   grid-template-rows: repeat(16,1fr);
+  cursor: default;
 }
 .play-again-button{
    grid-column: 12/span 7; 
@@ -22,6 +23,14 @@
   cursor: pointer;
   font-family: 'Poppins', sans-serif;
   font-size: 1rem;
+
+   border-width: 2px;   
+  text-decoration: none;
+  text-align: center; 
+}
+.play-again-button .text{
+  position: relative;
+  top:20%;
 }
 .accuracy{
    background-color: transparent;
