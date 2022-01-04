@@ -3,14 +3,18 @@
   grid-template-rows: repeat(3,1fr);
    height: 100%;
    width:100%;
-   background-color: white;
-  border-radius: 5px; 
-
- 
+   background: white;
+   border-style: solid;
+   border-color: rgba(212, 212, 212, 1);
+   border-width: 1px;
+  border-radius: 5px;
+   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.04), 0 3px 6px rgba(0, 0, 0, 0.04);
 }
 .topic{
     grid-row: 1/span 1;
     background-color: white;
+    border-top-left-radius: 5px;
+     border-top-right-radius: 5px;
 }
 .question_no{
      grid-row: 2/span 1;
@@ -21,5 +25,6 @@
     grid-row: 3/span 1;
 
     background: linear-gradient(91.23deg, #6776FF 0%, #80FFDB 131.71%);
-
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius:5px ;
 }
