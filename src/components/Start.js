@@ -1,11 +1,12 @@
 import './Start.css'
 import {NavLink} from 'react-router-dom'
 function Start() {
-  
+ 
   return (
     <div className="Start gradientbg">
-      
-       <button className='start-button'>Start Quiz</button> 
+      <NavLink className='start-button' to="/playing">
+       <div className='text'> Start Quiz</div> 
+        </NavLink> 
         
     </div>
   );

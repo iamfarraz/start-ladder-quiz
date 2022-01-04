@@ -2,10 +2,9 @@ import './Game.css'
 import Start from "./Start"
 import End from "./End"
 import Playing from './Playing';
-import React,{useState,useEffect} from 'react';
-import {Routes,Route,Navigate} from 'react-router'
+import React from 'react';
+import {Routes,Route} from 'react-router'
 function Game() {
-   const [mode,setmode]=useState('')
   
    const start=<div className='start game'>
                   <Start />  </div>
