@@ -1,0 +1,25 @@
+.Question{
+   display:grid;
+  grid-template-rows: repeat(3,1fr);
+   height: 100%;
+   width:100%;
+   background-color: white;
+  border-radius: 5px; 
+
+ 
+}
+.topic{
+    grid-row: 1/span 1;
+    background-color: white;
+}
+.question_no{
+     grid-row: 2/span 1;
+    background: rgba(128, 255, 219, 0.2);
+  
+}
+.answer{
+    grid-row: 3/span 1;
+
+    background: linear-gradient(91.23deg, #6776FF 0%, #80FFDB 131.71%);
+
+}

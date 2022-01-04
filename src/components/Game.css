@@ -1,15 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
-.Game{
+.game{
   width: 50%;
-  height: 40%;
+  height: 45%;
   position: absolute;
   top:35%;
   left:25%;
   
 }
+/* .question{
+  display:grid;
+  grid-template-rows: repeat(3,1fr);
+} */
 
 @media screen and (max-width:950px) {
-  .Game{
+  .game{
     height:50%;
     width:80%;
     left:10%;
