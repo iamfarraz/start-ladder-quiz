@@ -10,7 +10,15 @@ function Playing() {
                 <div className='topic_name'>Product Management</div>
            </div>  
            <div className='time_box'>
-             <div className='timer'>Time</div>
+             <div className='minute'>
+               <div className='value'>00</div>
+               <div className='unit'>MIN</div>
+             </div>
+             <div className='divider'>:</div>
+            <div className='second'>
+                  <div className='value'>00</div>
+                  <div className='unit'>SEC</div>
+                </div>
              </div>   
           
       </div>

@@ -35,6 +35,29 @@ line-height: 21px;
  font-weight: 500;
     font-family: Poppins;
 }
+
+.time_box{
+    background-color: rgba(47, 47, 47, 0.36);
+    height: 46px;
+    width:90px;
+      border-radius: 5px;
+      color: white;
+   font-family: Poppins;
+ font-size: 14px;
+line-height: 21px;
+font-weight: 500;
+display:flex;
+padding-left: 2%;
+padding-right: 2%;
+justify-content: space-between;
+align-items: center;
+}
+.time_box .minute,.time_box .second{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .middle{
      grid-row: 2/span 1;
     background: rgba(128, 255, 219, 0.2); 
