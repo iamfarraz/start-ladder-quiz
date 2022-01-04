@@ -24,7 +24,9 @@
 }
 .topic,.question_no{
     color: rgba(178, 169, 169, 1);
-
+ font-size: 14px;
+line-height: 21px;
+ font-weight: 500;
 }
 .topic_box .topic_name{
 color: rgba(47, 47, 47, 1);
@@ -88,8 +90,7 @@ line-height: 21px;
      margin-right: 3%;
 }
 .stuck{
-    background-color: transparent;
-    
+    background-color: transparent;  
   color: white;
   cursor:default;
    font-family: Poppins;
@@ -99,6 +100,7 @@ line-height: 21px;
 }
 .solution-button{
     height:35%;
+    margin-left:2%;
      background-color: transparent;
   border-color: white;
   border-radius: 5px;
@@ -106,5 +108,46 @@ line-height: 21px;
   color: white;
    font-family: Poppins;
   font-size: 1rem;
-   flex-grow: 4;
+   flex-grow: 3;
+}
+
+@media screen and (max-width:950px)  {
+    .Playing{
+         display:grid;
+  grid-template-rows: repeat(13,1fr);
+    }
+    .bottom{
+       
+        flex-direction: column;
+        grid-row: 9/span 5;
+    }
+    .heading{
+        align-items: flex-start;
+        grid-row: 1/span 3;
+    }
+    .middle{
+        grid-row:4/ span 5;
+    }
+    .answer_input{
+       margin-right: 3%;
+      
+    }
+    .answer_box{
+       flex-grow: 3;
+    }
+    .query_box{
+        width:auto;
+        flex-grow: 2;
+        margin-left: 3%;
+        display: flex;
+       justify-content: flex-start;
+    }
+    .stuck{
+        flex-grow:0;
+    }
+    .solution-button{
+        height:auto;
+        flex-grow:0;
+       
+    }
 }

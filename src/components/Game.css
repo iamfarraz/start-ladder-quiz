@@ -11,8 +11,12 @@
 @media screen and (max-width:950px) {
   .game{
     height:50%;
-    width:80%;
-    left:10%;
+    width:85%;
+    left:5%;
     top:25%;
+  }
+  .playing{
+    top:20%;
+    height:60%;
   }
 }

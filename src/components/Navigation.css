@@ -87,6 +87,10 @@
 .line3-cross{
   transform: rotate(45deg) translate(-5px,-6px);
 }
+.nav{
+    margin-top: 2vh;
+    margin-left: 5vw;
+}
 
 
 

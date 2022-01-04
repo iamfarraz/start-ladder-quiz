@@ -11,9 +11,9 @@ function Game() {
       {/* <div className='start game'>
              <Start/>  
       </div> */}
-      <div className='playing game'>
+      {/* <div className='playing game'>
       <Playing/>
-      </div>
+      </div> */}
      
       {/* <div className='end game'>
          <End/>
