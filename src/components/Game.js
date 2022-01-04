@@ -1,18 +1,18 @@
 import './Game.css'
 import Start from "./Start"
 import End from "./End"
-import Question from './Question';
+import Playing from './Playing';
 function Game() {
   //start
-  //questions
+  //Playing
   //end
   return (
     <div className="Game">
       {/* <div className='start game'>
              <Start/>  
       </div> */}
-      <div className='question game'>
-      <Question/>
+      <div className='playing game'>
+      <Playing/>
       </div>
      
       {/* <div className='end game'>

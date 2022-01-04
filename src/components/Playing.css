@@ -1,4 +1,4 @@
-.Question{
+.Playing{
    display:grid;
   grid-template-rows: repeat(3,1fr);
    height: 100%;
@@ -9,6 +9,7 @@
    border-width: 1px;
   border-radius: 5px;
    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.04), 0 3px 6px rgba(0, 0, 0, 0.04);
+   cursor:default
 }
 .heading{
     grid-row: 1/span 1;
@@ -19,16 +20,18 @@
      justify-content:space-between;
      align-items: center;
      margin:3%;
-     
+
 }
 .topic,.question_no{
     color: rgba(178, 169, 169, 1);
 
 }
-.topic_name{
+.topic_box .topic_name{
 color: rgba(47, 47, 47, 1);
 font-size: 14px;
 line-height: 21px;
+ font-weight: 500;
+    font-family: Poppins;
 }
 .middle{
      grid-row: 2/span 1;
@@ -38,15 +41,15 @@ line-height: 21px;
     margin-left:3%;
     margin-top:2%;
 }
-.question{
+.question_box .question{
    color: rgba(0, 0, 0, 1);
    font-size: 16px;
    line-height: 24px;
-
+   font-weight: 500;
+    font-family: Poppins;
 }
 .bottom{
     grid-row: 3/span 1;
-
     background: linear-gradient(91.23deg, #6776FF 0%, #80FFDB 131.71%);
     border-bottom-left-radius: 5px;
     border-bottom-right-radius:5px ;
@@ -55,24 +58,26 @@ line-height: 21px;
      /* align-items: center; */
 }
 .answer_box{
-    margin-top: 2%;
     margin-left: 3%;
-   
+    display:flex;
+    flex-direction: column;
+    margin-top: 1.5%;
 }
 .answer{
   color: white;
    font-family: Poppins;
-  font-size: 1rem;
+ font-size: 14px;
+line-height: 21px;
+  
 }
 .answer_input{
-   
-
   border-radius: 5px;
   border-style: none;
-  
-  cursor: pointer;
    font-family: Poppins;
-  font-size: 1rem;
+  font-size: 14px;
+line-height: 21px;
+   height:35%;
+   margin-top: 1%;
 }
 
 .query_box{
@@ -84,22 +89,22 @@ line-height: 21px;
 }
 .stuck{
     background-color: transparent;
-
+    
   color: white;
-  cursor: pointer;
+  cursor:default;
    font-family: Poppins;
-  font-size: 1rem;
+  font-size: 14px;
+line-height: 21px;
  flex-grow: 1;
 }
 .solution-button{
+    height:35%;
      background-color: transparent;
   border-color: white;
   border-radius: 5px;
   border-style: solid;
   color: white;
-  cursor: pointer;
    font-family: Poppins;
   font-size: 1rem;
-  
    flex-grow: 4;
 }

@@ -1,15 +1,18 @@
-import './Question.css'
+import './Playing.css'
 
-function Question() {
+function Playing() {
   
   return (
-    <div className="Question ">
+    <div className="Playing ">
       <div className='heading'>
           <div className='topic_box'>
                 <div className='topic'>Topic</div>
                 <div className='topic_name'>Product Management</div>
-           </div>     
-          <div className='timer'>Time</div>
+           </div>  
+           <div className='time_box'>
+             <div className='timer'>Time</div>
+             </div>   
+          
       </div>
       <div className='middle'>
           <div className='question_box'>
@@ -33,4 +36,4 @@ function Question() {
   );
 }
 
-export default Question;
+export default Playing;
