@@ -4,7 +4,7 @@ function Start() {
  
   return (
     <div className="Start gradientbg">
-      <NavLink className='start-button' to="/playing">
+      <NavLink className='start-button' to="/playing" >
        <div className='text'> Start Quiz</div> 
         </NavLink> 
         

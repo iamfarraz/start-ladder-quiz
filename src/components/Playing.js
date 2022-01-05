@@ -1,13 +1,23 @@
 import './Playing.css'
 import React,{useState,useEffect} from 'react'
+import { useNavigate } from "react-router-dom";
+
 function Playing(props) {
    const {taskArray}=props;
    const [index,setindex]=useState(0);
+   let navigate = useNavigate();
   //  "_id":"1",
   //        "category":"Product Management",
   //        "question":"Which of the following is not a priority metric for a new Internet web portal that has been launched?",
   //        "answer":"Time duration on the site"
-  
+   const handleEnter=(e)=>{
+     console.log(e.key)
+     if(e.key==='Enter'){
+       if(index<5)setindex(index+1)
+       else { navigate("/end")}
+     }
+
+   }
   return (
    
       <div className="Playing">
@@ -45,7 +55,13 @@ function Playing(props) {
         <div className='bottom'>
             <div className='answer_box'>
                 <div className='answer'>ANSWER</div>
-                <input className='answer_input' type="text" placeholder="Type Answer.."></input>
+                <input 
+                className='answer_input'
+                 type="text" 
+                 onKeyPress={handleEnter} 
+                 placeholder="Type Answer.."
+                 autoFocus="autofocus"
+                 ></input>
             </div>
             <div className='query_box'>
             <div className='stuck'>Stuck ?</div>
