@@ -1,14 +1,16 @@
 import './Playing.css'
+import './BottomLayer.css'
 import React,{useState,useEffect} from 'react'
 import { useNavigate } from "react-router-dom";
-
+import TopLayer from './TopLayer';
+import MiddleLayer from './MiddleLayer';
 import right from "../../assets/right.json"
 import Lottie from "lottie-react";
 function Playing(props) {
    const {taskArray,updateTotalTime,increaseCorrects}=props;
   
    const [index,setindex]=useState(0);
-   const [sec,setsec]=useState(0);
+  
    const [inputText,setinputText]=useState('');
    const [timeOn,settimeOn]=useState(true);
    const [animation,setanimation]=useState(false)
@@ -46,46 +48,7 @@ function Playing(props) {
 
     const handleChange=(e)=>setinputText(e.target.value)
 
-    useEffect(()=>{
-      console.log("use Effect")
-      let interval=null;
-      if(settimeOn){
-        interval=  setInterval(()=>{ 
-       setsec(sec+1)
-      },1000)
-      }
-      else{ console.log("set time is offf")}
-
-     return ()=>{ 
-       clearInterval(interval);
-       updateTotalTime(sec);
-       }
-    },[sec])
-
-
-   const heading= <div className='heading'>
-            <div className='topic_box'>
-                  <div className='topic'>Topic</div>
-                  <div className='topic_name'>
-                    {!taskArray[index]
-                      ? "Loading"
-                      : taskArray[index].category
-                    }
-                  </div>
-            </div>  
-            <div className='time_box'>
-              <div className='minute'>
-                <div className='value'>{("0"+Math.floor(sec/60)).slice(-2)}</div>
-                <div className='unit'>MIN</div>
-              </div>
-              <div className='divider'>:</div>
-              <div className='second'>
-                    <div className='value'>{("0"+sec%60).slice(-2)}</div>
-                    <div className='unit'>SEC</div>
-                  </div>
-              </div>   
-            
-                  </div>
+  
     
     const answer_box= <div className='answer_box' >
                       <div className='answer'>ANSWER</div>
@@ -115,21 +78,21 @@ function Playing(props) {
   return (
    
       <div className="Playing">
-         {heading}
-        <div className='middle'>
-            <div className='question_box'>
-                <div className='question_no'>
-                  QUESTION {!taskArray[index] ? "..": taskArray[index]._id} of 6</div>
-                <div className='question'>
-                  {!taskArray[index] ? "..": taskArray[index].question}</div>        
-            </div> 
-        </div>
+         <TopLayer 
+         index={index} 
+         taskArray={taskArray}
+         updateTotalTime={updateTotalTime}
+         timeOn={timeOn}
+         />
+        <MiddleLayer
+        index={index}
+        taskArray={taskArray}
+        />
         <div className='bottom'>
            {answer_box}
            {query_box}
-           {/* <div className='right_box'> */}
+          
           {/* <Lottie animationData={right} loop={false} style={style} />  */}
-           {/* </div> */}
            
         </div>
        </div> 

@@ -1,0 +1,53 @@
+.TopLayer{
+    grid-row: 1/span 1;
+    background-color: white;
+    border-top-left-radius: 5px;
+     border-top-right-radius: 5px;
+     display: flex;
+     justify-content:space-between;
+     align-items: center;
+     margin:3%;
+
+}
+
+.topic{
+    color: rgba(178, 169, 169, 1);
+ font-size: 14px;
+line-height: 21px;
+ font-weight: 500;
+}
+.topic_box .topic_name{
+color: rgba(47, 47, 47, 1);
+font-size: 14px;
+line-height: 21px;
+ font-weight: 500;
+    font-family: Poppins;
+}
+
+.time_box{
+    background-color: rgba(47, 47, 47, 0.36);
+    height: 46px;
+    width:90px;
+      border-radius: 5px;
+      color: white;
+   font-family: Poppins;
+ font-size: 14px;
+line-height: 21px;
+font-weight: 500;
+display:flex;
+padding-left: 2%;
+padding-right: 2%;
+justify-content: space-between;
+align-items: center;
+}
+.time_box .minute,.time_box .second{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+@media screen and (max-width:950px)  {
+    .TopLayer{
+        align-items: flex-start;
+        grid-row: 1/span 3;
+    }
+}
