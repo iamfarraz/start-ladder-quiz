@@ -1,6 +1,7 @@
 import './Quiz.css';
-import Navigation from "./components/Navigation"
-import Game from "./components/Game";
+import Navigation from "../Navigation/Navigation"
+import Game from "../Game/Game";
+
 function Quiz() {
   return (
     <div className="Quiz">

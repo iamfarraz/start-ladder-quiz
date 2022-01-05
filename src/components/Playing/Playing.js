@@ -2,6 +2,8 @@ import './Playing.css'
 import React,{useState,useEffect} from 'react'
 import { useNavigate } from "react-router-dom";
 
+import right from "../../assets/right.json"
+import Lottie from "lottie-react";
 function Playing(props) {
    const {taskArray,updateTotalTime,increaseCorrects}=props;
   
@@ -9,6 +11,7 @@ function Playing(props) {
    const [sec,setsec]=useState(0);
    const [inputText,setinputText]=useState('');
    const [timeOn,settimeOn]=useState(true);
+   const [animation,setanimation]=useState(false)
    
    let navigate = useNavigate();
    const handleEnter=(e)=>{
@@ -20,6 +23,11 @@ function Playing(props) {
         if(taskArray[index].answer.toLowerCase()===myanswer){
           increaseCorrects(1);
           // alert("COrrect ans")
+          setanimation(true)
+          setTimeout(()=>{
+            setanimation(false)
+          },2000)
+          // 
         }
         else {
           // console.log("Wrongggg")
@@ -53,11 +61,9 @@ function Playing(props) {
        updateTotalTime(sec);
        }
     },[sec])
-    
-  return (
-   
-      <div className="Playing">
-        <div className='heading'>
+
+
+   const heading= <div className='heading'>
             <div className='topic_box'>
                   <div className='topic'>Topic</div>
                   <div className='topic_name'>
@@ -79,7 +85,37 @@ function Playing(props) {
                   </div>
               </div>   
             
-        </div>
+                  </div>
+    
+    const answer_box= <div className='answer_box' >
+                      <div className='answer'>ANSWER</div>
+                      <input 
+                      className='answer_input'
+                      type="text" 
+                      onKeyPress={handleEnter} 
+                      placeholder="Type Answer.."
+                      autoFocus="autofocus"
+                      onChange={handleChange}
+                      value={inputText || ''}
+                      ></input>
+                      </div>
+    const query_box = <div className='query_box'>
+                      <div className='stuck'>Stuck ?</div>
+                      <button className='solution-button'>See Solution</button>
+                      </div>
+     const style = {
+       position:"relative",
+       height: "20vh",
+       margin:"0",
+       padding:"0",
+       left:"35%"
+       
+};       
+      
+  return (
+   
+      <div className="Playing">
+         {heading}
         <div className='middle'>
             <div className='question_box'>
                 <div className='question_no'>
@@ -89,22 +125,12 @@ function Playing(props) {
             </div> 
         </div>
         <div className='bottom'>
-            <div className='answer_box'>
-                <div className='answer'>ANSWER</div>
-                <input 
-                className='answer_input'
-                 type="text" 
-                 onKeyPress={handleEnter} 
-                 placeholder="Type Answer.."
-                 autoFocus="autofocus"
-                 onChange={handleChange}
-                 value={inputText || ''}
-                 ></input>
-            </div>
-            <div className='query_box'>
-            <div className='stuck'>Stuck ?</div>
-            <button className='solution-button'>See Solution</button>
-            </div>
+           {answer_box}
+           {query_box}
+           {/* <div className='right_box'> */}
+          {/* <Lottie animationData={right} loop={false} style={style} />  */}
+           {/* </div> */}
+           
         </div>
        </div> 
   );

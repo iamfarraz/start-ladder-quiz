@@ -1,8 +1,11 @@
 import './App.css';
-import Quiz from "./Quiz"
+import Quiz from "./components/Quiz/Quiz"
 import dots_verticle from "./assets/dots_verticle.png"
 import dots_horizontal from "./assets/dots_horizontal.png"
+import React,{useState} from 'react'
+
 function App() {
+  
   return (
     <div className="App">
      <div className='rectangle'></div>
@@ -12,7 +15,9 @@ function App() {
      <div className='dots-horizontal'>
        <img src={dots_horizontal} alt="dots-horizontal"/>
      </div>
-      <Quiz/>   
+      <Quiz/>  
+   
+      
     </div>
   );
 }

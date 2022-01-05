@@ -1,7 +1,7 @@
 import './Game.css'
-import Start from "./Start"
-import End from "./End"
-import Playing from './Playing';
+import Start from "../Start/Start"
+import End from "../End/End"
+import Playing from '../Playing/Playing';
 import React,{useState,useEffect} from 'react'
 import {Routes,Route} from 'react-router'
 function Game() {

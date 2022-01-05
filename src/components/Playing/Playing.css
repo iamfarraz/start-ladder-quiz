@@ -85,6 +85,11 @@ align-items: center;
      justify-content:space-between;
      /* align-items: center; */
 }
+.right_box{
+    position:absolute;
+    height: 100%;
+    width: 100%;
+}
 .answer_box{
     margin-left: 3%;
     display:flex;
@@ -136,6 +141,8 @@ line-height: 21px;
   font-size: 1rem;
    flex-grow: 3;
 }
+
+
 
 @media screen and (max-width:950px)  {
     .Playing{

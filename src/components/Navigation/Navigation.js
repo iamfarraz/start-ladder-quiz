@@ -1,5 +1,5 @@
 import "./Navigation.css"
-import logo from "../assets/logo.png"
+import logo from "../../assets/logo.png"
 import {useState} from 'react'
 
 function Navigation() {
