@@ -8,36 +8,51 @@ function Playing(props) {
    const [index,setindex]=useState(0);
    const [sec,setsec]=useState(0);
    const [inputText,setinputText]=useState('');
-    
+   const [timeOn,settimeOn]=useState(true);
+   
    let navigate = useNavigate();
    const handleEnter=(e)=>{
      
       if(e.key==='Enter'){
+        settimeOn(false)
         //check answer is correct or not
         const myanswer=(e.target.value).toLowerCase()
         if(taskArray[index].answer.toLowerCase()===myanswer){
           increaseCorrects(1);
+          // alert("COrrect ans")
         }
+        else {
+          // console.log("Wrongggg")
+        }
+
         //moving to next
-        if(index<5)setindex(index+1)
+        if(index<5){setindex(index+1)}
         else { navigate("/end")}
         // clearing input  field 
         setinputText('')
+
+        settimeOn(true)
         }
+       else settimeOn(true) 
     }
 
     const handleChange=(e)=>setinputText(e.target.value)
 
     useEffect(()=>{
-    let interval=  setInterval(()=>{ 
+      console.log("use Effect")
+      let interval=null;
+      if(settimeOn){
+        interval=  setInterval(()=>{ 
        setsec(sec+1)
       },1000)
+      }
+      else{ console.log("set time is offf")}
 
      return ()=>{ 
        clearInterval(interval);
        updateTotalTime(sec);
        }
-    })
+    },[sec])
     
   return (
    

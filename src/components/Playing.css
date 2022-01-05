@@ -72,7 +72,10 @@ align-items: center;
    line-height: 24px;
    font-weight: 500;
     font-family: Poppins;
+    /* transition: 0.5s ease-in; */
+    /* transform: translateX(-100%); */
 }
+
 .bottom{
     grid-row: 3/span 1;
     background: linear-gradient(91.23deg, #6776FF 0%, #80FFDB 131.71%);
