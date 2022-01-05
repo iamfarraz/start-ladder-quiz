@@ -4,20 +4,25 @@ import { useNavigate } from "react-router-dom";
 
 function Playing(props) {
    const {taskArray}=props;
+  
    const [index,setindex]=useState(0);
+   const [sec,setsec]=useState(0)
+    
    let navigate = useNavigate();
-  //  "_id":"1",
-  //        "category":"Product Management",
-  //        "question":"Which of the following is not a priority metric for a new Internet web portal that has been launched?",
-  //        "answer":"Time duration on the site"
    const handleEnter=(e)=>{
-     console.log(e.key)
-     if(e.key==='Enter'){
-       if(index<5)setindex(index+1)
-       else { navigate("/end")}
-     }
+      if(e.key==='Enter'){
+        if(index<5)setindex(index+1)
+        else { navigate("/end")}
+        }
+    }
+    // useEffect(()=>{settimeOn(true) },[])
+    useEffect(()=>{
+    let interval=  setInterval(()=>{ 
+       setsec(sec+1)
+      },1000)
 
-   }
+     return ()=>{ clearInterval(interval)  }
+    })
   return (
    
       <div className="Playing">
@@ -33,12 +38,12 @@ function Playing(props) {
             </div>  
             <div className='time_box'>
               <div className='minute'>
-                <div className='value'>00</div>
+                <div className='value'>{("0"+Math.floor(sec/60)).slice(-2)}</div>
                 <div className='unit'>MIN</div>
               </div>
               <div className='divider'>:</div>
               <div className='second'>
-                    <div className='value'>00</div>
+                    <div className='value'>{("0"+sec%60).slice(-2)}</div>
                     <div className='unit'>SEC</div>
                   </div>
               </div>   
