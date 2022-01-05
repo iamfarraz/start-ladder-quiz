@@ -1,7 +1,12 @@
 import './Start.css'
 import {NavLink} from 'react-router-dom'
-function Start() {
- 
+import React,{useEffect} from 'react'
+function Start(props) {
+   const {updateCorrects,updateTotalTime}=props
+   useEffect(()=>{
+    updateCorrects(0)
+    updateTotalTime(0)
+   },[])
   return (
     <div className="Start gradientbg">
       <NavLink className='start-button' to="/playing" >

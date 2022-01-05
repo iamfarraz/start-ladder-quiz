@@ -3,26 +3,42 @@ import React,{useState,useEffect} from 'react'
 import { useNavigate } from "react-router-dom";
 
 function Playing(props) {
-   const {taskArray}=props;
+   const {taskArray,updateTotalTime,increaseCorrects}=props;
   
    const [index,setindex]=useState(0);
-   const [sec,setsec]=useState(0)
+   const [sec,setsec]=useState(0);
+   const [inputText,setinputText]=useState('');
     
    let navigate = useNavigate();
    const handleEnter=(e)=>{
+     
       if(e.key==='Enter'){
+        //check answer is correct or not
+        const myanswer=(e.target.value).toLowerCase()
+        if(taskArray[index].answer.toLowerCase()===myanswer){
+          increaseCorrects(1);
+        }
+        //moving to next
         if(index<5)setindex(index+1)
         else { navigate("/end")}
+        // clearing input  field 
+        setinputText('')
         }
     }
-    // useEffect(()=>{settimeOn(true) },[])
+
+    const handleChange=(e)=>setinputText(e.target.value)
+
     useEffect(()=>{
     let interval=  setInterval(()=>{ 
        setsec(sec+1)
       },1000)
 
-     return ()=>{ clearInterval(interval)  }
+     return ()=>{ 
+       clearInterval(interval);
+       updateTotalTime(sec);
+       }
     })
+    
   return (
    
       <div className="Playing">
@@ -66,6 +82,8 @@ function Playing(props) {
                  onKeyPress={handleEnter} 
                  placeholder="Type Answer.."
                  autoFocus="autofocus"
+                 onChange={handleChange}
+                 value={inputText || ''}
                  ></input>
             </div>
             <div className='query_box'>

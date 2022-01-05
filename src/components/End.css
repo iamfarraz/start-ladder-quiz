@@ -81,6 +81,9 @@ grid-row: 6/span 1;
     .avg{
          grid-column: 18/span 7;
     }
+    .accuracy{
+       grid-column: 10/span 4;
+    }
     .play-again-button{
        grid-column: 12/span 11;    
     }

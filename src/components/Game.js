@@ -5,9 +5,13 @@ import Playing from './Playing';
 import React,{useState,useEffect} from 'react'
 import {Routes,Route} from 'react-router'
 function Game() {
-  
+  //states
   const [taskArray,settaskArray]=useState([])
-   useEffect(()=>{
+  const [corrects,setcorrects]=useState(0)
+  const [totalTime,settotalTime]=useState(0)
+
+  //functions
+  useEffect(()=>{
      fetch("https://api.startladder.co/api/frontend/tasks")
      .then(res=>res.json())
      .then(data=>{
@@ -16,12 +20,31 @@ function Game() {
      })
      .catch(err=>console.log(err))
    },[])
-  const start=<div className='start game'>
-                  <Start />  </div>
-  const playing= <div className='playing game'>
-                  <Playing taskArray={taskArray} /> </div>  
-  const end=<div className='end game'>
-                  <End  /> </div>  
+
+   const increaseCorrects=(val)=>{ setcorrects(corrects+val)}
+   const updateTotalTime=(val)=>{settotalTime(val)}
+   const updateCorrects=(val)=>{setcorrects(val)}
+   
+  const start=
+  <div className='start game'>
+    <Start 
+    updateTotalTime={updateTotalTime}
+    updateCorrects={updateCorrects}/> 
+   </div>
+  const playing= 
+  <div className='playing '>
+     <Playing 
+     taskArray={taskArray} 
+     increaseCorrects={increaseCorrects}
+     updateTotalTime={updateTotalTime} /> 
+  </div> 
+
+  const end=
+  <div className='end game'>
+     <End 
+     corrects={corrects} 
+     totalTime={totalTime} /> 
+  </div>  
    
                   
   return (

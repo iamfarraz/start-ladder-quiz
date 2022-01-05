@@ -1,16 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
 .game{
   width: 50%;
-  height: 45%;
+  height: 40%;
   position: absolute;
-  top:35%;
-  left:25%;
-  
+  top:30%;
+  left:25%; 
+}
+.playing{
+  width: 50%;
+  height: 50%;
+  position: absolute;
+  top:30%;
+  left:25%; 
+
 }
 
 @media screen and (max-width:950px) {
   .game{
-    height:50%;
+    height:40%;
     width:85%;
     left:5%;
     top:25%;
@@ -18,5 +25,7 @@
   .playing{
     top:20%;
     height:60%;
+    width:85%;
+    left:5%;
   }
 }
