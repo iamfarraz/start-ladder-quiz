@@ -16,10 +16,10 @@ function TopLayer(props) {
         else { console.log("set time is offf") }
 
         return () => {
-            clearInterval(interval);
             updateTotalTime(sec);
+            clearInterval(interval);
         }
-    }, [sec])
+    }, [sec,timeOn])
    return (
        <div className='TopLayer'>
            <div className='topic_box'>

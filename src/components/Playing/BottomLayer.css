@@ -7,10 +7,11 @@
      justify-content:space-between;
      /* align-items: center; */
 }
-.right_box{
-    position:absolute;
-    height: 100%;
-    width: 100%;
+.right{
+   background: linear-gradient(91.23deg, #20622A 0%, #48B566 131.71%); 
+}
+.wrong{
+    background: linear-gradient(91.23deg, #F35325 0%, #F3AD25 131.71%);
 }
 .answer_box{
     margin-left: 3%;
