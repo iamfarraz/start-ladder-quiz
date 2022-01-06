@@ -1,6 +1,6 @@
 import './Playing.css'
 import './BottomLayer.css'
-import React,{useState,useEffect} from 'react'
+import React,{useState} from 'react'
 import { useNavigate } from "react-router-dom";
 import TopLayer from './TopLayer';
 import MiddleLayer from './MiddleLayer';
@@ -11,7 +11,7 @@ function Playing(props) {
    const {taskArray,updateTotalTime,increaseCorrects}=props;
   
    const [index,setindex]=useState(0);
-  
+   const [seenSolution,setseenSolution]=useState(false)
    const [inputText,setinputText]=useState('');
    const [timeOn,settimeOn]=useState(true);
    const [animation,setanimation]=useState(false);
@@ -35,14 +35,15 @@ function Playing(props) {
             //moving to next
             if (index < 5) { setindex(index + 1) }
             else { navigate("/end") }
-            // clearing input  field 
+      
             setinputText('')
+            setseenSolution(false)
             settimeOn(true)
           }, 1500)
         }
         const myanswer=(e.target.value).toLowerCase()
         if(taskArray[index].answer.toLowerCase()===myanswer){
-          increaseCorrects(1);
+          if(!seenSolution)increaseCorrects(1);
           animate('right')
         }
         else {animate('wrong') }
@@ -53,7 +54,9 @@ function Playing(props) {
 
     const handleChange=(e)=>setinputText(e.target.value)
 
-  
+   const handleSolution=(e)=>{
+   setseenSolution(true)
+   }
     
     const answer_box= <div className='answer_box' >
                       <div className='answer'>ANSWER</div>
@@ -67,19 +70,10 @@ function Playing(props) {
                       value={inputText || ''}
                       ></input>
                       </div>
-    const query_box = <div className='query_box'>
-                      <div className='stuck'>Stuck ?</div>
-                      <button className='solution-button'>See Solution</button>
-                      </div>
+ 
      const style = {
        position:"relative",
-       height: "20vh",
-       margin:"0",
-       padding:"0",
-       left:"40%"
-       
-       
-};       
+       height: "20vh",   };       
       
   return (
    
@@ -96,14 +90,34 @@ function Playing(props) {
         />
       {animation
         ? <div className={`bottom ${result}`}> 
-          {result=='right'?
+          {result==='right'?
+            <div className='animation'>
             <Lottie animationData={right} loop={false} style={style} />  
-            : <Lottie animationData={wrong} loop={false} style={style} />  
+            </div>
+            : 
+            <div className='animation'>
+            <Lottie  animationData={wrong} loop={false} style={style} />  
+            </div>
           }
            </div>
         : <div className='bottom'>
           {answer_box}
-          {query_box}
+          {
+            seenSolution ?
+             <div className='query_box'>
+              <div className='stuck'>{taskArray[index].answer}</div>
+            </div> 
+            :
+              <div className='query_box'>
+                <div className='stuck'>Stuck ?</div>
+                <button
+                  className='solution-button'
+                  onClick={handleSolution} >
+                  See Solution
+                </button>
+              </div>
+          }
+          
           </div>
       }
         
